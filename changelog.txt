@@ -1,0 +1,32 @@
+//////////////////////////////////////////////////////////////////////////////////
+/////////Changelog UOANIMMIXER BMP
+
+09/03/2023
+-Redone tools to work with bmps files instead png. It takes longer as it read every pixel of every frame instead copy/paste. But no need to convert bmp into png now.
+-Internal behaviour have been changed, now it works pixel by pixel, instead copy/paste.
+It will check each pixel of each .bmp present in anim2. If the pixel is not black or white, it will copy the pixel and paste it on the proper frame present in Anim1.
+The result will be saved at output as always. Frames that are not present in both folders will be ignored and no output will be generated. WIll improve this part in future.
+
+10/03/2023
+-Fixed issue with anim1+anim2.py where it just copy part of the frame.
+     related: anim1+anim2.py ignore white or black pixels so no matter which kind of background are u using meanwhile is black or white
+
+-Added anim1y2_WhitesToBlack.py and BlacksToWhite.py: new tool to change background's color.(it is recomended to work with black backgrounds if u use programs like photoshop)
+           It will change all frames.bmp present on both folders, anim1 and anim2, and will be saved on same folders, not at output.
+-Duped some tools. Thoose tool that remove pixels now have two versions, one for black background and another for white. (temporal fix)
+-Improvements and little fixes at user_interface.py
+-Removed bmp/png converter as it is no longer need. Will create another git for it.
+-Added warning for missing frames at anim1 folder. If there is a warning it will be displayed at the end of process. Checking previous logs you can see the frame/s.
+      IF anim1 lack a frame: Warning will be displayed on logs. The frame will not be copied to output in this case. So there will be one less frame at output folder.
+      if anim2 lack a frame present in anim1: System will not realize. U need to get that frame manualy from anim1 to putput.
+      (anim1-anim2outline.py may works opposite.)
+
+NOTEs:
+
+-It really dosnt matter if u mix black and white background on same frame cos UO will not show any of them. Anyway I duped some tools to allow choose one or another.
+Using white over black background may be helpful at certain cases to check issues.
+I will probably change this in future and put a checkbox instead to select betwen black, white or custom color.
+-Now the code is harder to understand than before. It is not on purpose, IT is cos I was lazy and I recycled code doing minimal changes. At least it works.
+-Code can be optimized so hard and there is a lot of duped code. As it  would take me a lot of time to do it right, I think Ill leave it as it is.
+There wouldnt be a significative increase of performance removing duped code as duped code are on diferent files. 
+There is code that could be shorter, in thoose cases I´ll try to fix it but no hurry.
