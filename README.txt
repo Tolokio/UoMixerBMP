@@ -8,7 +8,7 @@ It is very recommended to work using User_Interface.py or idle as u will be able
 First of all is to create folders Then fill the folders and use any tool.
 IT is recommended to experiment things just to see what happens.Fill anim1 and anim2 with frames.bmp+liste.txt and try all options.
 
-This version works with ONLY with.BMP files.
+This version works with ONLY with.BMP files and is designed to work with frames extracted with mulpatcher.exe.
 
 [FOLDERS]
 -ANIM1->Put here .bmp files + liste.txt (will remain untouch but when u use BlackToWhite or WhitesToBlack.py)
